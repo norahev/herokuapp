@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-09 13:33+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+
+#: .\shop\templates\index.html:15 .\shop\templates\index.html:38
+msgid "About us"
+msgstr "Despre noi"
+
+#: .\shop\templates\index.html:16
+msgid "Shop"
+msgstr "Magazin"
+
+#: .\shop\templates\index.html:17
+msgid "Contact"
+msgstr "Contact"
+
+#: .\shop\templates\index.html:33
+msgid "Homemade honey for everyone."
+msgstr "Miere de casă pentru toată lumea"
+
+#: .\shop\templates\index.html:52
+msgid "Order here."
+msgstr "Cumpără aici."
+
+#: .\shop\templates\index.html:62
+msgid "Order here"
+msgstr "Cumpără aici."
+
+#: .\shop\templates\index.html:69
+msgid "Email address*"
+msgstr "Adresa de email*"
+
+#: .\shop\templates\index.html:71
+msgid "We'll never share your personal information with anyone else."
+msgstr "Nu vom împărtăși informațiile personale cu nimeni."
+
+#: .\shop\templates\index.html:74
+msgid "Name*"
+msgstr "Nume*"
+
+#: .\shop\templates\index.html:78
+msgid "Address*"
+msgstr "Adresa*"
+
+#: .\shop\templates\index.html:82
+msgid "Address"
+msgstr "Adresa"
+
+#: .\shop\templates\index.html:86
+msgid "Telephone*"
+msgstr "Număr de telefon*"
+
+#: .\shop\templates\index.html:93
+msgid "Choose a product, a size and quantity*"
+msgstr "Selectați un produs, mărime și cantitate*"
+
+#: .\shop\templates\index.html:95
+msgid "Choose a product"
+msgstr "Selectați produsul"
+
+#: .\shop\templates\index.html:102
+msgid "Choose size"
+msgstr "Selectați mărimea"
+
+#: .\shop\templates\index.html:106
+msgid "Choose a quantity"
+msgstr "Selectați cantitatea"
+
+#: .\shop\templates\index.html:115
+msgid "Add to Cart"
+msgstr "Adauga în coș"
+
+#: .\shop\templates\index.html:120
+msgid "CART"
+msgstr "Coșul meu"
+
+#: .\shop\templates\index.html:122
+msgid "ITEM"
+msgstr "Produs"
+
+#: .\shop\templates\index.html:123
+msgid "SIZE"
+msgstr "MĂRIME"
+
+#: .\shop\templates\index.html:124
+msgid "QUANTITY"
+msgstr "Cantitate"
+
+#: .\shop\templates\index.html:125
+msgid "PRICE"
+msgstr "Preț"
+
+#: .\shop\templates\index.html:129
+msgid "Total"
+msgstr "Total"
+
+#: .\shop\templates\index.html:132
+msgid "PURCHASE"
+msgstr "Cumpără"
+
+#: .\shop\templates\index.html:133
+#, fuzzy
+#| msgid "Continue"
+msgid "Continue shopping"
+msgstr "Continua"
+
+#: .\shop\templates\index.html:136
+msgid "Thank you for shopping!"
+msgstr "Vă mulțumim pentru cumpărături"
+
+#: .\shop\templates\index.html:138
+msgid "Continue"
+msgstr "Continua"
+
+#: .\shop\templates\index.html:151
+msgid "Contact information"
+msgstr "Contact"
+
+#: .\shop\templates\index.html:152
+msgid "Mailing address:"
+msgstr "Adresa"
+
+#: .\shop\templates\index.html:154
+msgid "Email Address:"
+msgstr "Adresa de email"
+
+#: .\shop\templates\index.html:156
+msgid "Phone Number:"
+msgstr "Număr de telefon"
+
+#: .\shop\templates\layout.html:9
+msgid "Hello"
+msgstr "Ciao"
+
+#: .\shop\views.py:14
+msgid ""
+"My father's dream was always to become a beekeeper.He started working with "
+"them about 30 years ago, at first it was just a hobby.When my brother and I "
+"became old enough we started to do our share of work in the slowly growing "
+"business.We do our best to take care of our little friends.Our honey is "
+"completely natural and raw, there are no added substances in it.We work in "
+"this field, because we care about bees and the balance of nature.Without "
+"bees, there won't be a future for this planet.For this reason, it is "
+"important for us and for every small business working in this area, that "
+"people contribute to our work, by buying our products.It is people like us "
+"who help the bees stay alive and healthy."
+msgstr ""
+"Visul tatălui meu a fost întotdeauna să devină apicultor. A început să "
+"lucreze cu ei acum aproximativ 30 de ani, la început a fost doar un hobby. "
+"Când eu și fratele meu am devenit suficient de bătrâni am început să ne "
+"facem partea de muncă în afacerea în creștere lentă. Facem tot posibilul să "
+"avem grijă de prietenii noștri mici. Mierea noastră este complet naturală și "
+"crudă, nu există substanțe adăugate în ea. Lucrăm în acest domeniu pentru că "
+"ne pasă de albine și de echilibrul naturii. Fără albine, nu va exista un "
+"viitor pentru această planetă. Din acest motiv, este important pentru noi și "
+"pentru fiecare întreprindere mică care lucrează în acest domeniu, ca oamenii "
+"să contribuie la munca noastră, cumpărând produsele noastre. Oameni ca noi "
+"ajută albinele să rămână în viață și sănătoase. "
+
+#: .\shop\views.py:42
+msgid "Post request required."
+msgstr "Internal error."
+
+#: .\shop\views.py:51
+msgid "Your personal details were not sent, please try again."
+msgstr "Informațiile dvs. nu a fost trimise, vă rugăm încercați din nou."
+
+#: .\shop\views.py:58
+msgid "Your order could not be placed, please try again."
+msgstr "Comanda dvs. nu a fost registrată, vă rugăm încercați din nou."
+
+#: .\shop\views.py:71
+msgid "Order placed successfully."
+msgstr "Comanda dvs. a fost registrată."
+
+#: .\shop\views.py:72
+#, fuzzy
+#| msgid "Contact information"
+msgid "Order information"
+msgstr "Contact"
+
+#: .\shop\views.py:72
+msgid "You have the following order from honeyexpress: *order id: "
+msgstr "Comanda dvs. este: nr. de comandă: "
+
+#: .\shop\views.py:72
+msgid "; *product: "
+msgstr "; *produs: "
+
+#: .\shop\views.py:73
+msgid "; *size and *quantity: "
+msgstr "; *mărimea și *cantitatea"
