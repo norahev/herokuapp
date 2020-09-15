@@ -1,2 +1,131 @@
 
-{% extends 'layout.html' %}{% load i18n %}{% block body %}<div class='bg-image img1'><div id="side"><div class="menuX"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></div><div id="menu-modal"> <a class="menu-link" href="#aboutus">{% trans 'About us' %}</a><br> <a class="menu-link" href="#productpart">{% trans 'Shop' %}</a><br> <a class="menu-link" href="#contact">{% trans 'Contact' %}</a></div></div><div class="lang"><form action="{% url 'change_language' %}" method="POST"> {% csrf_token %} {% get_available_languages as LANGUAGES %} {% for language in LANGUAGES %} <button type="submit" class="langclass" name="language" value="{{ language.0 }}" {% if language.0 == LANGUAGE_CODE %} selected{% endif %}> {{ language.0|language_name_local }} </button> {% endfor %}</form></div><h1 class="bg-text">Honey Express</h1><p class='bg-small'>{% trans "Homemade honey for everyone." %}</p></div><div class="bg-image img2"><div class="info" id="aboutus"><h2 id="infon">{% trans "About us" %}</h2><br><p id="infod">{{ info }}</p></div></div><div class="bg-image img3"><div class="container" id="productpart"><div class="card-group"> {% for product in products %}<div class="card"> <img src= '{{ product.image.url }}' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">{{ product.name }}</h5><p class="card-text" class="texty">{{ product.description }}</p><p class="card-text"><small class="text-muted"><button class='button more'>{% trans "Order here." %}</button></small></p></div></div> {% endfor %}</div></div><div id="my-modal" class="modal"><div class="modal-content"><div class="modal-header"><h2>{% trans "Order here" %}</h2> <span class="close">&times;</span></div><div class="modal-body"><form id="orderform"><div id="clientinfo"><div class="form-group"> <label for="email">{% trans "Email address*" %}</label> <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"> <small id="emailHelp" class="form-text text-muted">{% trans "We'll never share your personal information with anyone else." %}</small></div><div class="form-group"> <label for="name">{% trans "Name*" %}</label> <input type="text" class="form-control" id="name" placeholder="Enter your full name"></div><div class="form-group"> <label for="address1">{% trans "Address*" %}</label> <input type="text" class="form-control" id="address1" placeholder="Enter your street an house number"></div><div class="form-group"> <label for="address2">{% trans "Address" %}</label> <input type="text" class="form-control" id="address2" placeholder="Enter your apartment, studio or floor number"></div><div class="form-group"> <label for="phone">{% trans "Telephone*" %}</label> <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number"></div><div class="form-group" id="req"></div></div><div id="chooseproduct"><div class="form-group"> <label for="productype">{% trans "Choose a product, a size and quantity*" %}</label> <select class="form-control" id="producttype"><option selected="true" disabled="disabled" value='option1'>{% trans "Choose a product" %}</option> {% for product in products %}<option class="option" value='{{ product.id }}'>{{ product.name }}</option> {% endfor %} </select><div id="s"> <select class="form-control" id="productsize"><option selected="true" disabled="disabled" value="option1">{% trans "Choose size" %}</option> </select></div> <select class="form-control" id="quantity"><option selected="true" disabled="disabled" value="option1">{% trans "Choose a quantity" %}</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option> </select></div><p id="price"></p> <button type="button" class="button" id="addtocart">{% trans "Add to Cart" %}</button></div></form><section class="container content-section" id='cartid'><h2 class="section-header" id="cart-header">{% trans "CART" %}</h2><div class="row cart-row"> <span class="col-3 cart-item cart-header cart-column">{% trans "ITEM" %}</span> <span class="col-3 cart-size cart-header cart-column">{% trans "SIZE" %}</span> <span class="col-3 cart-quantity cart-header cart-column">{% trans "QUANTITY" %}</span> <span class="col-3 cart-price cart-header cart-column">{% trans "PRICE" %}</span></div><div class="cart-items"></div><div class="cart-total"> <strong class="cart-total-title">{% trans "Total" %}</strong> <span class="cart-total-price" id="total">0 RON</span></div> <button type="button" class="button" id="purchase">{% trans "PURCHASE" %}</button> <button type="button" class="button" id="shopmore">{% trans "Continue shopping" %}</button> </section><div id="thanks"><h2>{% trans "Thank you for shopping!" %}</h2></div> <button type="button"class="button" id="continue">{% trans "Continue" %}</button></div><div class="modal-footer"><div id="error"></div> <span class="back">&#8249;</span></div></div></div></div><div class="bg-image img4"><div class="info" id="contact"><div><h4>{% trans "Contact information" %}</h4><h5>{% trans "Mailing address:" %}</h5><p> Puskin 8, Salonta, Bihor, Romania, 415500</p><h5>{% trans "Email Address:" %}</h5><p>honeyexpressinfo@gmail.com</p><h5>{% trans "Phone Number:" %}</h5><p>0040743234519</p><h5>Development</h5><p>Nora Hevesi - hevesinora17@gmail.com</p></div></div></div> {% endblock %}
+{% extends 'layout.html' %}{% load i18n %}{% block body %}
+<div class='bg-image img1'>
+	<div id="side">
+		<div class="menuX">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+		<div id="menu-modal"> <a class="menu-link" href="#aboutus">{% trans 'About us' %}</a>
+			<br> <a class="menu-link" href="#productpart">{% trans 'Shop' %}</a>
+			<br> <a class="menu-link" href="#contact">{% trans 'Contact' %}</a>
+		</div>
+	</div>
+	<div class="lang">
+		<form action="{% url 'change_language' %}" method="POST">{% csrf_token %} {% get_available_languages as LANGUAGES %} {% for language in LANGUAGES %}
+			<button type="submit" class="langclass" name="language" value="{{ language.0 }}" {% if language.0==L ANGUAGE_CODE %} selected{% endif %}>{{ language.0|language_name_local }}</button>{% endfor %}</form>
+	</div>
+	<h1 class="bg-text">Honey Express</h1>
+	<p class='bg-small'>{% trans "Homemade honey for everyone." %}</p>
+</div>
+<div class="bg-image img2">
+	<div class="info" id="aboutus">
+		<h2 id="infon">{% trans "About us" %}</h2>
+		<br>
+		<p id="infod">{{ info }}</p>
+	</div>
+</div>
+<div class="bg-image img3">
+	<div class="container" id="productpart">
+		<div class="card-group">{% for product in products %}
+			<div class="card">
+				<img src='{{ product.image.url }}' class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">{{ product.name }}</h5>
+					<p class="card-text" class="texty">{{ product.description }}</p>
+					<p class="card-text"><small class="text-muted"><button class='button more'>{% trans "Order here." %}</button></small>
+					</p>
+				</div>
+			</div>{% endfor %}</div>
+	</div>
+	<div id="my-modal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>{% trans "Order here" %}</h2>  <span class="close">&times;</span>
+			</div>
+			<div class="modal-body">
+				<form id="orderform">
+					<div id="clientinfo">
+						<div class="form-group">
+							<label for="email">{% trans "Email address*" %}</label>
+							<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"> <small id="emailHelp" class="form-text text-muted">{% trans "We'll never share your personal information with anyone else." %}</small>
+						</div>
+						<div class="form-group">
+							<label for="name">{% trans "Name*" %}</label>
+							<input type="text" class="form-control" id="name" placeholder="Enter your full name">
+						</div>
+						<div class="form-group">
+							<label for="address1">{% trans "Address*" %}</label>
+							<input type="text" class="form-control" id="address1" placeholder="Enter your street an house number">
+						</div>
+						<div class="form-group">
+							<label for="address2">{% trans "Address" %}</label>
+							<input type="text" class="form-control" id="address2" placeholder="Enter your apartment, studio or floor number">
+						</div>
+						<div class="form-group">
+							<label for="phone">{% trans "Telephone*" %}</label>
+							<input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+						</div>
+						<div class="form-group" id="req"></div>
+					</div>
+					<div id="chooseproduct">
+						<div class="form-group">
+							<label for="productype">{% trans "Choose a product, a size and quantity*" %}</label>
+							<select class="form-control" id="producttype">
+								<option selected="true" disabled="disabled" value='option1'>{% trans "Choose a product" %}</option>{% for product in products %}
+								<option class="option" value='{{ product.id }}'>{{ product.name }}</option>{% endfor %}</select>
+							<div id="s">
+								<select class="form-control" id="productsize">
+									<option selected="true" disabled="disabled" value="option1">{% trans "Choose size" %}</option>
+								</select>
+							</div>
+							<select class="form-control" id="quantity">
+								<option selected="true" disabled="disabled" value="option1">{% trans "Choose a quantity" %}</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<p id="price"></p>
+						<button type="button" class="button" id="addtocart">{% trans "Add to Cart" %}</button>
+					</div>
+				</form>
+				<section class="container content-section" id='cartid'>
+					<h2 class="section-header" id="cart-header">{% trans "CART" %}</h2>
+					<div class="row cart-row"> <span class="col-3 cart-item cart-header cart-column">{% trans "ITEM" %}</span>  <span class="col-3 cart-size cart-header cart-column">{% trans "SIZE" %}</span>  <span class="col-3 cart-quantity cart-header cart-column">{% trans "QUANTITY" %}</span>  <span class="col-3 cart-price cart-header cart-column">{% trans "PRICE" %}</span>
+					</div>
+					<div class="cart-items"></div>
+					<div class="cart-total"> <strong class="cart-total-title">{% trans "Total" %}</strong>  <span class="cart-total-price" id="total">0 RON</span>
+					</div>
+					<button type="button" class="button" id="purchase">{% trans "PURCHASE" %}</button>
+					<button type="button" class="button" id="shopmore">{% trans "Continue shopping" %}</button>
+				</section>
+				<div id="thanks">
+					<h2>{% trans "Thank you for shopping!" %}</h2>
+				</div>
+				<button type="button" class="button" id="continue">{% trans "Continue" %}</button>
+			</div>
+			<div class="modal-footer">
+				<div id="error"></div> <span class="back">&#8249;</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-image img4">
+	<div class="info" id="contact">
+		<div>
+			<h4>{% trans "Contact information" %}</h4>
+			<h5>{% trans "Mailing address:" %}</h5>
+			<p>Puskin 8, Salonta, Bihor, Romania, 415500</p>
+			<h5>{% trans "Email Address:" %}</h5>
+			<p>honeyexpressinfo@gmail.com</p>
+			<h5>{% trans "Phone Number:" %}</h5>
+			<p>0040743234519</p>
+			<h5>Development</h5>
+			<p>Nora Hevesi - hevesinora17@gmail.com</p>
+		</div>
+	</div>
+</div>{% endblock %}
