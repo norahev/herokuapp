@@ -152,8 +152,8 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 AWS_STORAGE_BUCKET_NAME = 'honeyexpress'
 AWS_S3_REGION_NAME = 'eu-west-2'  
-AWS_ACCESS_KEY_ID = 'AKIA6BVH73CKWC7PIU7Q'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = '*******'
+AWS_SECRET_ACCESS_KEY = '*********'
 
 # Tell django-storages the domain to use to refer to static files.
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
@@ -164,8 +164,8 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'honeyexpressinfo@gmail.com'
-EMAIL_HOST_PASSWORD = 'Noel2018'
+EMAIL_HOST_USER = '*******'
+EMAIL_HOST_PASSWORD = '******'
 
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=500)
